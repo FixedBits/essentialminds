@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Font types */
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+/* End of Font Types */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Tinos", serif;
+}
+
+body {
+  background-color: rgb(64, 80, 77);
+}
+
+nav {
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  list-style: none;
+  background-color: transparent;
+}
+
+.nav-list li {
+  list-style-type: none;
+  padding: 3px;
+}
+.nav-list li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.nav-list .logo {
+  /* The logo stays left */
+  margin-right: auto;
+  background-color: rgb(234, 94, 0);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Spacing between items */
+.nav-list li:not(.logo) {
+  margin-left: 1.5rem;
+}
+
+.nav-list .contact-btn a {
+  font-size: 19px;
+  background-color: rgb(234, 94, 0);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.hero-section {
+  background-image: url(/images/bg-hero-pexels-karolina-grabowska-6255875.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.hero-section p,
+h1 {
+  margin-top: 2rem;
+  width: 500px;
+  color: whitesmoke;
+}
