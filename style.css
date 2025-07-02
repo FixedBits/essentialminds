@@ -35,21 +35,22 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
-  background-color: hsl(45deg 14.63% 83.92%);
+  background-color: whitesmoke;
 }
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: hsl(45deg 14.63% 83.92%);
+  background-color: whitesmoke;
 }
 
 nav {
   width: 100%;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.151);
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.205);
   padding: 0 80px;
   padding: 5px 0;
 }
@@ -88,11 +89,16 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  font-size: 1.2em;
 }
 
 /* Spacing between items */
 .nav-list li:not(.logo) {
   margin-left: 2.5rem;
+}
+
+.nav-list a:hover {
+  border-bottom: 1px solid #ff4d4d;
 }
 
 .logo img {
@@ -106,7 +112,7 @@ nav {
   border-radius: 5px;
   padding: 15px;
   color: rgb(255, 255, 255);
-  transition: 0.2s;
+  transition: .3s;
 }
 
 .contact-btn:hover a {
@@ -116,7 +122,7 @@ nav {
 }
 
 .hero-section {
-  background-image: url(/images/bg-hero-pexels-karolina-grabowska-6255875.jpg);
+  background-image: url(/images/hero-pexels-shvets-production-7176319.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -124,7 +130,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  min-height: 80vh;
 }
 
 .hero-section h1 {
@@ -135,7 +141,7 @@ nav {
 
 .hero-section p {
   width: 40%;
-  color: whitesmoke;
+  color: white;
   font-size: 25px;
   line-height: 45px;
   display: flex;
@@ -153,8 +159,8 @@ nav {
   font-size: 24px;
   background-color: rgb(246, 101, 100, 1);
   border-radius: 5px;
-  padding: 15px;
-  color: whitesmoke;
+  padding: 20px;
+  color: white;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -165,19 +171,14 @@ nav {
 
 .mission-section {
   /* background-color: rgb(161, 161, 161); */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
   align-items: center;
   padding-bottom: 2rem;
-}
-
-.mission-section {
+  background: rgb(255, 115, 115);
   position: relative;
-  background-color: rgba(49, 49, 49, 0.94);
-  color: #fff;
   padding: 3rem 2rem;
   overflow: hidden;
+  z-index: -2;
 }
 
 .mission-section::before {
@@ -186,46 +187,58 @@ nav {
   top: 30px;
   left: -5%;
   width: 120%;
-  height: 90%;
-  background: rgb(255, 138, 14);
+  height: 95%;
+  background: whitesmoke;
   transform: rotate(-6deg);
-  z-index: -666;
+  z-index: -1;
 }
 
 .mission-paragraphs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1500px;
-  padding: 1.2rem;
+  border-radius: 20px;
 }
 
 .mission-paragraphs p {
-  flex: 1;
   border-radius: 20px;
-  max-width:950px;
-  width: 100%;
   text-align: center;
+  max-width: 1000px;
   /* background-color: rgba(249, 204, 39, 0.537); */
 }
 
 .mission-section p,
 .services-section p {
+  text-align: left;
   padding: 20px 1rem;
   width: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 35px;
 }
 
-h2 {
-  margin: 1.3rem;
+.mission-content img {
+  height: 500px;
+  width: 600px;
+  border-radius: 20px;
+}
+
+.mission-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+h2 {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
 }
 
 h3 {
@@ -241,9 +254,9 @@ h3 {
 }
 
 .services-section {
+  background: rgb(202, 202, 202);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
 }
