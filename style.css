@@ -126,7 +126,7 @@ li {
 }
 
 .hero-section {
-  background-image: url(/images/hero-pexels-shvets-production-7176319.jpg);
+  background-image: url(./images/hero-pexels-shvets-production-7176319.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
