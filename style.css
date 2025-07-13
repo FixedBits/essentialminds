@@ -322,9 +322,11 @@ h3 {
 }
 
 .footer-section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: left;
   margin: 2rem 0;
-
   font-size: 19px;
 }
 
