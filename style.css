@@ -126,6 +126,7 @@ li {
 }
 
 .hero-section {
+  position: relative;
   background-image: url(./images/hero-pexels-shvets-production-7176319.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -135,17 +136,35 @@ li {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute; /* Makes it layer over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.486);
+  z-index: 0; /* Places the overlay behind the content */
+}
+
+.hero-section * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-section h1 {
   margin: 2rem;
   color: whitesmoke;
   font-size: 25px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.588);
 }
 
 .hero-section p {
   width: 40%;
-  color: white;
+  color: whitesmoke;
   font-size: 25px;
   line-height: 45px;
   display: flex;
@@ -211,8 +230,7 @@ li {
   /* background-color: rgba(249, 204, 39, 0.537); */
 }
 
-.mission-section p,
-.services-section p {
+.mission-section p {
   text-align: left;
   padding: 20px 1rem;
   width: 65%;
@@ -234,7 +252,6 @@ li {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex: 1;
 }
 
 h2 {
@@ -246,23 +263,39 @@ h2 {
 }
 
 h3 {
-  margin: 1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.5em;
-}
-
-.bullet-txt {
-  white-space: nowrap;
+  margin-bottom: 35px;
 }
 
 .services-section {
-  background: rgb(255, 189, 189);
+  background-color: whitesmoke;
+  padding: 40px;
+}
+
+.services-section p {
+  text-align: left;
+  display: flex;
+  font-size: 20px;
+  line-height: 35px;
+  padding: 15px 0;
+}
+
+.services-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.service-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex: 1 1 300px;
+}
+
+.service-card img {
+  width: 500px;
+  height: auto;
+  margin: 20px 0;
 }
 
 .footer-section {
@@ -305,6 +338,9 @@ h3 {
   margin: 8px 0;
 }
 
+.footer-list li a {
+  color: rgba(195, 195, 195, 0.513);
+}
 @media (max-width: 768px) {
   .footer-lists {
     flex-direction: column;
