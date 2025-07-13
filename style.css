@@ -270,21 +270,29 @@ h3 {
 
 .services-section {
   background-color: whitesmoke;
-  padding: 40px;
+}
+
+.services-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-content {
+  /* Centers content */
+  margin: 0 auto;
+  max-width: 1500px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .services-section p {
   text-align: left;
-  display: flex;
   font-size: 20px;
   line-height: 35px;
   padding: 15px 0;
-}
-
-.services-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
+  max-width: 450px;
 }
 
 .service-card {
@@ -293,8 +301,14 @@ h3 {
   flex: 1 1 300px;
 }
 
+.card-title {
+  align-self: flex-start;
+  margin-bottom: 35px;
+  font-size: 1.5em;
+}
+
 .service-card img {
-  width: 500px;
+  width: 450px;
   height: auto;
   margin: 20px 0;
   border-radius: 10px;
@@ -310,9 +324,7 @@ h3 {
 .footer-section p {
   text-align: left;
   margin: 2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   font-size: 19px;
 }
 
