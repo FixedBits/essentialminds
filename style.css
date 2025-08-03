@@ -1,58 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Font types */
-.tinos-regular {
-  font-family: 'Tinos', serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.tinos-bold {
-  font-family: 'Tinos', serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.tinos-regular-italic {
-  font-family: 'Tinos', serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.tinos-bold-italic {
-  font-family: 'Tinos', serif;
-  font-weight: 700;
-  font-style: italic;
-}
-/* End of Font Types */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Tinos', serif;
-}
-
+/* Base Typography & Reset */
 html {
+  font-size: 16px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+body,
+* {
+  font-family: 'Tinos', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: whitesmoke;
 }
 
+/* Font Utility Classes */
+.tinos-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+.tinos-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+.tinos-regular-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+.tinos-bold-italic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Header & Navigation */
 header {
-  /* position: sticky;
-  top: 0;
-  z-index: 1000; */
   background-color: whitesmoke;
 }
 
 nav {
   width: 100%;
   box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.205);
-  padding: 0 80px;
   padding: 5px 0;
 }
 
@@ -62,47 +54,32 @@ nav {
   padding: 1rem;
 }
 
-.nav-list li {
+ul {
   list-style-type: none;
-  padding: 3px;
-  text-wrap: nowrap;
 }
 
-.nav-list li a {
+.nav-list li {
+  list-style: none;
+  padding: 3px;
+  margin-left: 2.5rem;
+  white-space: nowrap;
+}
+
+.nav-list li.logo {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.nav-list a {
   text-decoration: none;
   color: rgb(35, 35, 35);
-  font-size: 18px;
+  font-size: 1.2rem;
   transition: 0.3s;
-  padding-bottom: 10px; /* padding between link and underline */
+  padding-bottom: 10px;
 }
-.nav-list li a:hover {
+
+.nav-list li:not(.logo) a:hover {
   color: rgb(255, 139, 23);
-}
-
-li {
-  list-style-type: none;
-}
-
-.nav-list .logo {
-  /* The logo stays left */
-  margin-right: auto;
-  font-size: 20px;
-}
-
-.nav-list .logo a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.2em;
-}
-
-/* Spacing between items */
-.nav-list li:not(.logo) {
-  margin-left: 2.5rem;
-}
-
-.nav-list a:hover {
   border-bottom: 1px solid #ff4d4d;
 }
 
@@ -111,12 +88,19 @@ li {
   width: 50px;
 }
 
-.nav-list .contact-btn a {
-  font-size: 19px;
-  background-color: rgb(246, 101, 100, 1);
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.contact-btn a {
+  font-size: 1.1875rem;
+  background-color: rgb(246, 101, 100);
   border-radius: 5px;
   padding: 15px;
-  color: rgb(255, 255, 255);
+  color: white;
   transition: 0.3s;
 }
 
@@ -126,29 +110,29 @@ li {
   background-color: #ffa638;
 }
 
+/* Hero Section */
 .hero-section {
   position: relative;
-  background-image: url(./images/hero-pexels-shvets-production-7176319.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url(./images/hero-pexels-shvets-production-7176319.jpg) center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
   z-index: 1;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
 .hero-section::before {
   content: '';
-  position: absolute; /* Makes it layer over the image */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.551);
-  z-index: 0; /* Places the overlay behind the content */
+  z-index: 0;
 }
 
 .hero-section * {
@@ -157,31 +141,39 @@ li {
 }
 
 .hero-section h1 {
-  margin: 2rem;
+  margin: 2rem 0;
   color: whitesmoke;
-  font-size: 25px;
+  font-size: clamp(2rem, 5vw, 3.3rem);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.588);
 }
 
-.hero-section p {
-  width: 40%;
-  color: whitesmoke;
-  font-size: 25px;
-  line-height: 45px;
+h2 {
+  margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
-.hero-section h1 {
-  font-size: 3.3rem;
+h3 {
+  margin-bottom: 35px;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin: 0;
 }
 
+.hero-section p {
+  width: 90%;
+  max-width: 600px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
+  color: whitesmoke;
+}
+
+/* CTA Button */
 .cta-btn {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  font-size: 24px;
-  background-color: rgb(246, 101, 100, 1);
+  margin: 3rem 0 2rem;
+  font-size: 1.5rem;
+  background-color: rgb(246, 101, 100);
   border-radius: 5px;
   padding: 20px;
   color: white;
@@ -194,28 +186,25 @@ li {
   color: black;
 }
 
+/* Mission Section */
 .mission-section {
-  background-image: url(./images/mission-background.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  align-items: center;
-  padding-bottom: 2rem;
+  background: url(./images/mission-background.png) center/cover no-repeat;
+  padding: 4rem 2rem;
   overflow: hidden;
-  /* z-index: -2; */
-  padding: 4rem 0;
 }
 
-/* .mission-section::before {
-  content: '';
-  position: absolute;
-  top: 30px;
-  left: -5%;
-  width: 120%;
-  height: 95%;
-  background: whitesmoke;
-  transform: rotate(-6deg);
-  z-index: -1;
+.mission-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 3rem;
+}
+
+/* .mission-content img {
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+  border-radius: 20px;
 } */
 
 .mission-paragraphs {
@@ -226,64 +215,25 @@ li {
 }
 
 .mission-paragraphs p {
-  border-radius: 20px;
-  text-align: center;
-  max-width: 900px;
-  /* background-color: rgba(249, 204, 39, 0.537); */
-}
-
-.mission-section p {
   text-align: left;
-  padding: 15px 1rem;
-  width: 75%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  line-height: 35px;
+  padding-bottom: 2rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 2;
+  max-width: 900px;
 }
 
-.mission-content img {
-  height: 560px;
-  width: 560px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.mission-content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-h2 {
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3em;
-}
-
-h3 {
-  margin-bottom: 35px;
-}
-
+/* Services Section */
 .services-section {
   padding: 4rem 0;
-  background-size: 1000px auto; /* or any fixed width/height */
-  background-image: url(./images/services-background.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url(./images/services-background.png) center/cover no-repeat;
   color: whitesmoke;
 }
 
 .services-title {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .services-content {
-  /* Centers content */
   margin: 0 auto;
   max-width: 1500px;
   display: flex;
@@ -292,60 +242,84 @@ h3 {
 }
 
 .services-section p {
-  text-align: left;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 1.3125rem;
+  line-height: 2.2;
   padding: 15px 0;
   max-width: 450px;
+  text-align: left;
 }
 
 .service-card {
-  flex: 1 1 200px;
-  margin: 20px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  margin: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .card-title {
-  font-size: 1.5em;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.service-card p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: left;
+  max-width: 100%;
 }
 
 .service-card img {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   margin: 20px 0;
   border-radius: 10px;
 }
 
+/* Footer Section */
 .footer-section {
   background: rgb(45, 45, 45);
-  border-top: solid rgba(150, 150, 150, 0.538) 1px;
+  border-top: 1px solid rgba(150, 150, 150, 0.538);
   color: rgba(195, 195, 195, 0.513);
   padding-bottom: 3rem;
-}
-
-.footer-section p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  margin: 2rem 0;
-  font-size: 19px;
+  text-align: center;
 }
 
 .footer-section h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin: 4rem 0 2rem;
+  font-size: clamp(1.1rem, 2.5vw, 3rem);
+}
+
+.footer-section p {
+  margin: 2rem 0;
+  font-size: 1.1875rem;
 }
 
 .footer-social {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.footer-social img {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(747%) hue-rotate(330deg);
+  transition: 0.3s;
+}
+
+.footer-social img:hover {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(747%) hue-rotate(330deg);
+  transition: 0.5s;
 }
 
 .footer-lists {
@@ -364,24 +338,65 @@ h3 {
   margin: 8px 0;
 }
 
-.footer-list li a {
+.footer-list a {
   color: rgba(195, 195, 195, 0.513);
 }
 
-.footer-social img {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(747%) hue-rotate(330deg);
-  transition: 0.3s;
-}
-
-.footer-social img:hover {
-  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(747%) hue-rotate(330deg);
-  transition: 0.5s;
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
   .footer-lists {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+  }
+
+  html {
+    min-width: fit-content; /* Optional workaround if overflow persists */
+  }
+
+  .hero-section h1 {
+    margin: 1rem 0;
+  }
+
+  .hero-section p {
+    line-height: 1.5;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .mission-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-card {
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  }
+
+  .service-card p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .footer-section h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .footer-section p {
+    font-size: 1rem;
   }
 }
