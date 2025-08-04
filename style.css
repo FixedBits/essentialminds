@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* Base Typography & Reset */
 html {
@@ -9,7 +9,7 @@ html {
 
 body,
 * {
-  font-family: 'Tinos', serif;
+  font-family: "Tinos", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -113,7 +113,8 @@ ul {
 /* Hero Section */
 .hero-section {
   position: relative;
-  background: url(./images/hero-pexels-shvets-production-7176319.jpg) center/cover no-repeat;
+  background: url(./images/hero-pexels-shvets-production-7176319.jpg)
+    center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +126,7 @@ ul {
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -167,7 +168,7 @@ h3 {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 1.6;
   color: whitesmoke;
-text-align: left;
+  text-align: left;
 }
 
 /* CTA Button */
@@ -246,8 +247,8 @@ text-align: left;
   font-size: 1.3125rem;
   line-height: 2.2;
   padding: 15px 0;
-  max-width: 450px;
   text-align: left;
+  width: 5520px;
 }
 
 .service-card {
@@ -296,9 +297,9 @@ text-align: left;
   text-align: center;
 }
 
-.footer-section h1 {
+.footer-section h2 {
   margin: 4rem 0 2rem;
-  font-size: clamp(1.1rem, 2.5vw, 3rem);
+  font-size: clamp(1.1rem, 2.1vw, 2.5rem);
 }
 
 .footer-section p {
@@ -314,13 +315,17 @@ text-align: left;
 }
 
 .footer-social img {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(747%) hue-rotate(330deg);
-  transition: 0.3s;
+  filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(747%)
+    hue-rotate(330deg);
+  transition: 0.5s;
 }
 
-.footer-social img:hover {
-  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(747%) hue-rotate(330deg);
-  transition: 0.5s;
+/** :active along with the hover makes it for broader support on mobile devices that retain the hover color when tapped */
+.footer-social img:hover,
+:active {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(747%)
+    hue-rotate(330deg);
+  transition: 0.3s;
 }
 
 .footer-lists {
@@ -351,9 +356,10 @@ text-align: left;
     gap: 2rem;
   }
 
-  html {
-    min-width: fit-content; /* Optional workaround if overflow persists */
+  /* html {
+    min-width: fit-content;
   }
+  */
 
   .hero-section h1 {
     margin: 1rem 0;
