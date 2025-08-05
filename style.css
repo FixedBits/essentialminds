@@ -294,7 +294,7 @@ h3 {
   border-top: 1px solid rgba(150, 150, 150, 0.538);
   color: rgba(195, 195, 195, 0.513);
   padding-bottom: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-section h2 {
@@ -320,9 +320,7 @@ h3 {
   transition: 0.5s;
 }
 
-/** :active along with the hover makes it for broader support on mobile devices that retain the hover color when tapped */
-.footer-social img:hover,
-:active {
+.footer-social img:hover {
   filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(747%)
     hue-rotate(330deg);
   transition: 0.3s;
