@@ -346,6 +346,10 @@ h3 {
   color: rgba(195, 195, 195, 0.513);
 }
 
+.footer-copyright {
+  text-align: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .footer-lists {

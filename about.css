@@ -1,0 +1,65 @@
+/* Outline For Testing Purposes */
+/* * {
+  outline: 4px solid rgba(255, 99, 247, 0.811);
+} */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 4rem 6rem;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+
+  /* border: orange solid 1px; */
+  border-radius: 20px;
+}
+
+.about-wrapper {
+  border: solid rgba(234, 222, 222, 0.811) 4px;
+  margin: 2rem;
+}
+
+.about-section:nth-child(even) {
+  direction: rtl; /* Flips layout for even sections */
+}
+
+.about-section:nth-child(even) .about-text {
+  direction: ltr; /* Resets text direction */
+}
+
+.about-photo {
+  display: flex;
+  flex-direction: column;
+}
+.about-photo img {
+  /* border: solid rgba(78, 18, 230, 0.811) 4px; */
+  width: 350px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 5px 10px 10px rgba(114, 114, 114, 0.489);
+}
+
+.about-photo .title-tags {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  gap: 1rem;
+  border: solid rgba(209, 209, 209, 0.959) 4px;
+  max-width: 400px;
+}
+
+.about-photo .title-tags p {
+  border: solid rgba(18, 230, 145, 0.811) 4px;
+  border-radius: 10px;
+  background-color: rgba(241, 241, 241, 0.493);
+  padding: 5px;
+}
+.about-text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  padding-inline: 3rem; /* Logical padding: left/right depending on direction */
+}
