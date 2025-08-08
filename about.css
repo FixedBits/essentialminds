@@ -68,7 +68,9 @@
 
 @media (max-width: 768px) {
   .about-section {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
